@@ -1,5 +1,5 @@
 /*****************************************************************************
- * FileName:        Arial36.h
+ * FileName:        goodtimes36.h
  * Processor:       PIC24F, PIC24H, dsPIC
  * Compiler:        MPLAB C30 (see release notes for tested revision)
  * Linker:          MPLAB LINK30
@@ -34,8 +34,8 @@
  * AUTO-GENERATED CODE:  Graphics Resource Converter version: 3.17.47
  *****************************************************************************/
 
-#ifndef ARIAL36_H_FILE
-#define ARIAL36_H_FILE
+#ifndef GOODTIMES36_H_FILE
+#define GOODTIMES36_H_FILE
 /*****************************************************************************
  * SECTION:  Includes
  *****************************************************************************/
@@ -58,10 +58,10 @@
 
 /*********************************
  * TTF Font File Structure
- * Label: arial_36
- * Description:  Height: 43 pixels, 1 bit per pixel, Range: ' ' to '9'
+ * Label: good_times_rg_36
+ * Description:  Height: 44 pixels, 1 bit per pixel, Range: '0' to 'Z'
  ***********************************/
-extern const FONT_FLASH arial_36;
-#define arial_36_SIZE    (2993)
+extern const FONT_FLASH good_times_rg_36;
+#define good_times_rg_36_SIZE    (7968)
 #endif
 

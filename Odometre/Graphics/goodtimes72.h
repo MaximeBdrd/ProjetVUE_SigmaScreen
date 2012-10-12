@@ -1,5 +1,5 @@
 /*****************************************************************************
- * FileName:        Arial48.h
+ * FileName:        goodtimes72.h
  * Processor:       PIC24F, PIC24H, dsPIC
  * Compiler:        MPLAB C30 (see release notes for tested revision)
  * Linker:          MPLAB LINK30
@@ -34,8 +34,8 @@
  * AUTO-GENERATED CODE:  Graphics Resource Converter version: 3.17.47
  *****************************************************************************/
 
-#ifndef ARIAL48_H_FILE
-#define ARIAL48_H_FILE
+#ifndef GOODTIMES72_H_FILE
+#define GOODTIMES72_H_FILE
 /*****************************************************************************
  * SECTION:  Includes
  *****************************************************************************/
@@ -45,11 +45,6 @@
 /*****************************************************************************
  * SECTION:  Graphics Library Firmware Check
  *****************************************************************************/
-#if(GRAPHICS_LIBRARY_VERSION != 0x0304)
-#warning "It is suggested to use Graphics Library verson 3.04 with this version of GRC."
-#endif
-
-
 
 
 /*****************************************************************************
@@ -58,10 +53,10 @@
 
 /*********************************
  * TTF Font File Structure
- * Label: arial_48
- * Description:  Height: 56 pixels, 1 bit per pixel, Range: ' ' to '9'
+ * Label: good_times_rg_72
+ * Description:  Height: 87 pixels, 1 bit per pixel, Range: '0' to '9'
  ***********************************/
-extern const FONT_FLASH arial_48;
-#define arial_48_SIZE    (4928)
+extern const FONT_FLASH good_times_rg_72;
+#define good_times_rg_72_SIZE    (6660)
 #endif
 

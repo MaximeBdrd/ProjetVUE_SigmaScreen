@@ -45,9 +45,9 @@
         <itemPath>Graphics/mchpGfxDrv.h</itemPath>
         <itemPath>Graphics/Palette.h</itemPath>
         <itemPath>Graphics/Primitive.h</itemPath>
+        <itemPath>Graphics/goodtimes72.h</itemPath>
         <itemPath>Graphics/ArialBold16.h</itemPath>
-        <itemPath>Graphics/Arial48.h</itemPath>
-        <itemPath>Graphics/Arial36.h</itemPath>
+        <itemPath>Graphics/goodtimes36.h</itemPath>
       </logicalFolder>
       <itemPath>GenericTypeDefs.h</itemPath>
       <itemPath>Compiler.h</itemPath>
@@ -69,6 +69,7 @@
         <itemPath>Board/Timers.c</itemPath>
         <itemPath>Board/TouchScreen.c</itemPath>
         <itemPath>Board/TouchScreenResistive.c</itemPath>
+        <itemPath>Graphics/ArialBold16.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="Graphic Lib" projectFiles="true">
         <logicalFolder name="f1" displayName="Widgets" projectFiles="true">
@@ -96,9 +97,8 @@
         <itemPath>Graphics/mchpGfxDrv.c</itemPath>
         <itemPath>Graphics/Palette.c</itemPath>
         <itemPath>Graphics/Primitive.c</itemPath>
-        <itemPath>Graphics/ArialBold16.c</itemPath>
-        <itemPath>Graphics/Arial48.c</itemPath>
-        <itemPath>Graphics/Arial36.c</itemPath>
+        <itemPath>Graphics/goodtimes72.c</itemPath>
+        <itemPath>Graphics/goodtimes36.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
     </logicalFolder>

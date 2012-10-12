@@ -41,11 +41,11 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Board/Board.o ${OBJECTDIR}/Board/FSIO.o ${OBJECTDIR}/Board/SD-SPI.o ${OBJECTDIR}/Board/serialComm.o ${OBJECTDIR}/Board/TimeDelay.o ${OBJECTDIR}/Board/Timers.o ${OBJECTDIR}/Board/TouchScreen.o ${OBJECTDIR}/Board/TouchScreenResistive.o ${OBJECTDIR}/Graphics/GroupBox.o ${OBJECTDIR}/Graphics/DigitalMeter.o ${OBJECTDIR}/Graphics/Button.o ${OBJECTDIR}/Graphics/CheckBox.o ${OBJECTDIR}/Graphics/ListBox.o ${OBJECTDIR}/Graphics/AnalogClock.o ${OBJECTDIR}/Graphics/EditBox.o ${OBJECTDIR}/Graphics/Chart.o ${OBJECTDIR}/Graphics/Meter.o ${OBJECTDIR}/Graphics/Picture.o ${OBJECTDIR}/Graphics/ProgressBar.o ${OBJECTDIR}/Graphics/RadioButton.o ${OBJECTDIR}/Graphics/RoundDial.o ${OBJECTDIR}/Graphics/Slider.o ${OBJECTDIR}/Graphics/StaticText.o ${OBJECTDIR}/Graphics/TextEntry.o ${OBJECTDIR}/Graphics/Window.o ${OBJECTDIR}/Graphics/GOL.o ${OBJECTDIR}/Graphics/GOLFontDefault.o ${OBJECTDIR}/Graphics/GOLSchemeDefault.o ${OBJECTDIR}/Graphics/mchpGfxDrv.o ${OBJECTDIR}/Graphics/Palette.o ${OBJECTDIR}/Graphics/Primitive.o ${OBJECTDIR}/Graphics/ArialBold16.o ${OBJECTDIR}/Graphics/Arial48.o ${OBJECTDIR}/Graphics/Arial36.o ${OBJECTDIR}/main.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/Board/Board.o.d ${OBJECTDIR}/Board/FSIO.o.d ${OBJECTDIR}/Board/SD-SPI.o.d ${OBJECTDIR}/Board/serialComm.o.d ${OBJECTDIR}/Board/TimeDelay.o.d ${OBJECTDIR}/Board/Timers.o.d ${OBJECTDIR}/Board/TouchScreen.o.d ${OBJECTDIR}/Board/TouchScreenResistive.o.d ${OBJECTDIR}/Graphics/GroupBox.o.d ${OBJECTDIR}/Graphics/DigitalMeter.o.d ${OBJECTDIR}/Graphics/Button.o.d ${OBJECTDIR}/Graphics/CheckBox.o.d ${OBJECTDIR}/Graphics/ListBox.o.d ${OBJECTDIR}/Graphics/AnalogClock.o.d ${OBJECTDIR}/Graphics/EditBox.o.d ${OBJECTDIR}/Graphics/Chart.o.d ${OBJECTDIR}/Graphics/Meter.o.d ${OBJECTDIR}/Graphics/Picture.o.d ${OBJECTDIR}/Graphics/ProgressBar.o.d ${OBJECTDIR}/Graphics/RadioButton.o.d ${OBJECTDIR}/Graphics/RoundDial.o.d ${OBJECTDIR}/Graphics/Slider.o.d ${OBJECTDIR}/Graphics/StaticText.o.d ${OBJECTDIR}/Graphics/TextEntry.o.d ${OBJECTDIR}/Graphics/Window.o.d ${OBJECTDIR}/Graphics/GOL.o.d ${OBJECTDIR}/Graphics/GOLFontDefault.o.d ${OBJECTDIR}/Graphics/GOLSchemeDefault.o.d ${OBJECTDIR}/Graphics/mchpGfxDrv.o.d ${OBJECTDIR}/Graphics/Palette.o.d ${OBJECTDIR}/Graphics/Primitive.o.d ${OBJECTDIR}/Graphics/ArialBold16.o.d ${OBJECTDIR}/Graphics/Arial48.o.d ${OBJECTDIR}/Graphics/Arial36.o.d ${OBJECTDIR}/main.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Board/Board.o ${OBJECTDIR}/Board/FSIO.o ${OBJECTDIR}/Board/SD-SPI.o ${OBJECTDIR}/Board/serialComm.o ${OBJECTDIR}/Board/TimeDelay.o ${OBJECTDIR}/Board/Timers.o ${OBJECTDIR}/Board/TouchScreen.o ${OBJECTDIR}/Board/TouchScreenResistive.o ${OBJECTDIR}/Graphics/GroupBox.o ${OBJECTDIR}/Graphics/DigitalMeter.o ${OBJECTDIR}/Graphics/Button.o ${OBJECTDIR}/Graphics/CheckBox.o ${OBJECTDIR}/Graphics/ListBox.o ${OBJECTDIR}/Graphics/AnalogClock.o ${OBJECTDIR}/Graphics/EditBox.o ${OBJECTDIR}/Graphics/Chart.o ${OBJECTDIR}/Graphics/Meter.o ${OBJECTDIR}/Graphics/Picture.o ${OBJECTDIR}/Graphics/ProgressBar.o ${OBJECTDIR}/Graphics/RadioButton.o ${OBJECTDIR}/Graphics/RoundDial.o ${OBJECTDIR}/Graphics/Slider.o ${OBJECTDIR}/Graphics/StaticText.o ${OBJECTDIR}/Graphics/TextEntry.o ${OBJECTDIR}/Graphics/Window.o ${OBJECTDIR}/Graphics/GOL.o ${OBJECTDIR}/Graphics/GOLFontDefault.o ${OBJECTDIR}/Graphics/GOLSchemeDefault.o ${OBJECTDIR}/Graphics/mchpGfxDrv.o ${OBJECTDIR}/Graphics/Palette.o ${OBJECTDIR}/Graphics/Primitive.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Graphics/goodtimes72.o ${OBJECTDIR}/Graphics/ArialBold16.o ${OBJECTDIR}/Graphics/goodtimes36.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/Board/Board.o.d ${OBJECTDIR}/Board/FSIO.o.d ${OBJECTDIR}/Board/SD-SPI.o.d ${OBJECTDIR}/Board/serialComm.o.d ${OBJECTDIR}/Board/TimeDelay.o.d ${OBJECTDIR}/Board/Timers.o.d ${OBJECTDIR}/Board/TouchScreen.o.d ${OBJECTDIR}/Board/TouchScreenResistive.o.d ${OBJECTDIR}/Graphics/GroupBox.o.d ${OBJECTDIR}/Graphics/DigitalMeter.o.d ${OBJECTDIR}/Graphics/Button.o.d ${OBJECTDIR}/Graphics/CheckBox.o.d ${OBJECTDIR}/Graphics/ListBox.o.d ${OBJECTDIR}/Graphics/AnalogClock.o.d ${OBJECTDIR}/Graphics/EditBox.o.d ${OBJECTDIR}/Graphics/Chart.o.d ${OBJECTDIR}/Graphics/Meter.o.d ${OBJECTDIR}/Graphics/Picture.o.d ${OBJECTDIR}/Graphics/ProgressBar.o.d ${OBJECTDIR}/Graphics/RadioButton.o.d ${OBJECTDIR}/Graphics/RoundDial.o.d ${OBJECTDIR}/Graphics/Slider.o.d ${OBJECTDIR}/Graphics/StaticText.o.d ${OBJECTDIR}/Graphics/TextEntry.o.d ${OBJECTDIR}/Graphics/Window.o.d ${OBJECTDIR}/Graphics/GOL.o.d ${OBJECTDIR}/Graphics/GOLFontDefault.o.d ${OBJECTDIR}/Graphics/GOLSchemeDefault.o.d ${OBJECTDIR}/Graphics/mchpGfxDrv.o.d ${OBJECTDIR}/Graphics/Palette.o.d ${OBJECTDIR}/Graphics/Primitive.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/Graphics/goodtimes72.o.d ${OBJECTDIR}/Graphics/ArialBold16.o.d ${OBJECTDIR}/Graphics/goodtimes36.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/Board/Board.o ${OBJECTDIR}/Board/FSIO.o ${OBJECTDIR}/Board/SD-SPI.o ${OBJECTDIR}/Board/serialComm.o ${OBJECTDIR}/Board/TimeDelay.o ${OBJECTDIR}/Board/Timers.o ${OBJECTDIR}/Board/TouchScreen.o ${OBJECTDIR}/Board/TouchScreenResistive.o ${OBJECTDIR}/Graphics/GroupBox.o ${OBJECTDIR}/Graphics/DigitalMeter.o ${OBJECTDIR}/Graphics/Button.o ${OBJECTDIR}/Graphics/CheckBox.o ${OBJECTDIR}/Graphics/ListBox.o ${OBJECTDIR}/Graphics/AnalogClock.o ${OBJECTDIR}/Graphics/EditBox.o ${OBJECTDIR}/Graphics/Chart.o ${OBJECTDIR}/Graphics/Meter.o ${OBJECTDIR}/Graphics/Picture.o ${OBJECTDIR}/Graphics/ProgressBar.o ${OBJECTDIR}/Graphics/RadioButton.o ${OBJECTDIR}/Graphics/RoundDial.o ${OBJECTDIR}/Graphics/Slider.o ${OBJECTDIR}/Graphics/StaticText.o ${OBJECTDIR}/Graphics/TextEntry.o ${OBJECTDIR}/Graphics/Window.o ${OBJECTDIR}/Graphics/GOL.o ${OBJECTDIR}/Graphics/GOLFontDefault.o ${OBJECTDIR}/Graphics/GOLSchemeDefault.o ${OBJECTDIR}/Graphics/mchpGfxDrv.o ${OBJECTDIR}/Graphics/Palette.o ${OBJECTDIR}/Graphics/Primitive.o ${OBJECTDIR}/Graphics/ArialBold16.o ${OBJECTDIR}/Graphics/Arial48.o ${OBJECTDIR}/Graphics/Arial36.o ${OBJECTDIR}/main.o
+OBJECTFILES=${OBJECTDIR}/Board/Board.o ${OBJECTDIR}/Board/FSIO.o ${OBJECTDIR}/Board/SD-SPI.o ${OBJECTDIR}/Board/serialComm.o ${OBJECTDIR}/Board/TimeDelay.o ${OBJECTDIR}/Board/Timers.o ${OBJECTDIR}/Board/TouchScreen.o ${OBJECTDIR}/Board/TouchScreenResistive.o ${OBJECTDIR}/Graphics/GroupBox.o ${OBJECTDIR}/Graphics/DigitalMeter.o ${OBJECTDIR}/Graphics/Button.o ${OBJECTDIR}/Graphics/CheckBox.o ${OBJECTDIR}/Graphics/ListBox.o ${OBJECTDIR}/Graphics/AnalogClock.o ${OBJECTDIR}/Graphics/EditBox.o ${OBJECTDIR}/Graphics/Chart.o ${OBJECTDIR}/Graphics/Meter.o ${OBJECTDIR}/Graphics/Picture.o ${OBJECTDIR}/Graphics/ProgressBar.o ${OBJECTDIR}/Graphics/RadioButton.o ${OBJECTDIR}/Graphics/RoundDial.o ${OBJECTDIR}/Graphics/Slider.o ${OBJECTDIR}/Graphics/StaticText.o ${OBJECTDIR}/Graphics/TextEntry.o ${OBJECTDIR}/Graphics/Window.o ${OBJECTDIR}/Graphics/GOL.o ${OBJECTDIR}/Graphics/GOLFontDefault.o ${OBJECTDIR}/Graphics/GOLSchemeDefault.o ${OBJECTDIR}/Graphics/mchpGfxDrv.o ${OBJECTDIR}/Graphics/Palette.o ${OBJECTDIR}/Graphics/Primitive.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Graphics/goodtimes72.o ${OBJECTDIR}/Graphics/ArialBold16.o ${OBJECTDIR}/Graphics/goodtimes36.o
 
 
 CFLAGS=
@@ -267,29 +267,29 @@ ${OBJECTDIR}/Graphics/Primitive.o: Graphics/Primitive.c  nbproject/Makefile-${CN
 	@${RM} ${OBJECTDIR}/Graphics/Primitive.o.ok ${OBJECTDIR}/Graphics/Primitive.o.err 
 	@${FIXDEPS} "${OBJECTDIR}/Graphics/Primitive.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c ${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -omf=elf -x c -c -mcpu=$(MP_PROCESSOR_OPTION) -Werror -Wall -D__DEBUG -mlarge-code -mlarge-data -MMD -MF "${OBJECTDIR}/Graphics/Primitive.o.d" -o ${OBJECTDIR}/Graphics/Primitive.o Graphics/Primitive.c    
 	
+${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR} 
+	@${RM} ${OBJECTDIR}/main.o.d 
+	@${RM} ${OBJECTDIR}/main.o.ok ${OBJECTDIR}/main.o.err 
+	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c ${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -omf=elf -x c -c -mcpu=$(MP_PROCESSOR_OPTION) -Werror -Wall -D__DEBUG -mlarge-code -mlarge-data -MMD -MF "${OBJECTDIR}/main.o.d" -o ${OBJECTDIR}/main.o main.c    
+	
+${OBJECTDIR}/Graphics/goodtimes72.o: Graphics/goodtimes72.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/Graphics 
+	@${RM} ${OBJECTDIR}/Graphics/goodtimes72.o.d 
+	@${RM} ${OBJECTDIR}/Graphics/goodtimes72.o.ok ${OBJECTDIR}/Graphics/goodtimes72.o.err 
+	@${FIXDEPS} "${OBJECTDIR}/Graphics/goodtimes72.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c ${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -omf=elf -x c -c -mcpu=$(MP_PROCESSOR_OPTION) -Werror -Wall -D__DEBUG -mlarge-code -mlarge-data -MMD -MF "${OBJECTDIR}/Graphics/goodtimes72.o.d" -o ${OBJECTDIR}/Graphics/goodtimes72.o Graphics/goodtimes72.c    
+	
 ${OBJECTDIR}/Graphics/ArialBold16.o: Graphics/ArialBold16.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/Graphics 
 	@${RM} ${OBJECTDIR}/Graphics/ArialBold16.o.d 
 	@${RM} ${OBJECTDIR}/Graphics/ArialBold16.o.ok ${OBJECTDIR}/Graphics/ArialBold16.o.err 
 	@${FIXDEPS} "${OBJECTDIR}/Graphics/ArialBold16.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c ${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -omf=elf -x c -c -mcpu=$(MP_PROCESSOR_OPTION) -Werror -Wall -D__DEBUG -mlarge-code -mlarge-data -MMD -MF "${OBJECTDIR}/Graphics/ArialBold16.o.d" -o ${OBJECTDIR}/Graphics/ArialBold16.o Graphics/ArialBold16.c    
 	
-${OBJECTDIR}/Graphics/Arial48.o: Graphics/Arial48.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/Graphics/goodtimes36.o: Graphics/goodtimes36.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/Graphics 
-	@${RM} ${OBJECTDIR}/Graphics/Arial48.o.d 
-	@${RM} ${OBJECTDIR}/Graphics/Arial48.o.ok ${OBJECTDIR}/Graphics/Arial48.o.err 
-	@${FIXDEPS} "${OBJECTDIR}/Graphics/Arial48.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c ${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -omf=elf -x c -c -mcpu=$(MP_PROCESSOR_OPTION) -Werror -Wall -D__DEBUG -mlarge-code -mlarge-data -MMD -MF "${OBJECTDIR}/Graphics/Arial48.o.d" -o ${OBJECTDIR}/Graphics/Arial48.o Graphics/Arial48.c    
-	
-${OBJECTDIR}/Graphics/Arial36.o: Graphics/Arial36.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/Graphics 
-	@${RM} ${OBJECTDIR}/Graphics/Arial36.o.d 
-	@${RM} ${OBJECTDIR}/Graphics/Arial36.o.ok ${OBJECTDIR}/Graphics/Arial36.o.err 
-	@${FIXDEPS} "${OBJECTDIR}/Graphics/Arial36.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c ${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -omf=elf -x c -c -mcpu=$(MP_PROCESSOR_OPTION) -Werror -Wall -D__DEBUG -mlarge-code -mlarge-data -MMD -MF "${OBJECTDIR}/Graphics/Arial36.o.d" -o ${OBJECTDIR}/Graphics/Arial36.o Graphics/Arial36.c    
-	
-${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR} 
-	@${RM} ${OBJECTDIR}/main.o.d 
-	@${RM} ${OBJECTDIR}/main.o.ok ${OBJECTDIR}/main.o.err 
-	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c ${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -omf=elf -x c -c -mcpu=$(MP_PROCESSOR_OPTION) -Werror -Wall -D__DEBUG -mlarge-code -mlarge-data -MMD -MF "${OBJECTDIR}/main.o.d" -o ${OBJECTDIR}/main.o main.c    
+	@${RM} ${OBJECTDIR}/Graphics/goodtimes36.o.d 
+	@${RM} ${OBJECTDIR}/Graphics/goodtimes36.o.ok ${OBJECTDIR}/Graphics/goodtimes36.o.err 
+	@${FIXDEPS} "${OBJECTDIR}/Graphics/goodtimes36.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c ${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -omf=elf -x c -c -mcpu=$(MP_PROCESSOR_OPTION) -Werror -Wall -D__DEBUG -mlarge-code -mlarge-data -MMD -MF "${OBJECTDIR}/Graphics/goodtimes36.o.d" -o ${OBJECTDIR}/Graphics/goodtimes36.o Graphics/goodtimes36.c    
 	
 else
 ${OBJECTDIR}/Board/Board.o: Board/Board.c  nbproject/Makefile-${CND_CONF}.mk
@@ -478,29 +478,29 @@ ${OBJECTDIR}/Graphics/Primitive.o: Graphics/Primitive.c  nbproject/Makefile-${CN
 	@${RM} ${OBJECTDIR}/Graphics/Primitive.o.ok ${OBJECTDIR}/Graphics/Primitive.o.err 
 	@${FIXDEPS} "${OBJECTDIR}/Graphics/Primitive.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c ${MP_CC} $(MP_EXTRA_CC_PRE)  -g -omf=elf -x c -c -mcpu=$(MP_PROCESSOR_OPTION) -Werror -Wall -D__DEBUG -mlarge-code -mlarge-data -MMD -MF "${OBJECTDIR}/Graphics/Primitive.o.d" -o ${OBJECTDIR}/Graphics/Primitive.o Graphics/Primitive.c    
 	
+${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR} 
+	@${RM} ${OBJECTDIR}/main.o.d 
+	@${RM} ${OBJECTDIR}/main.o.ok ${OBJECTDIR}/main.o.err 
+	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c ${MP_CC} $(MP_EXTRA_CC_PRE)  -g -omf=elf -x c -c -mcpu=$(MP_PROCESSOR_OPTION) -Werror -Wall -D__DEBUG -mlarge-code -mlarge-data -MMD -MF "${OBJECTDIR}/main.o.d" -o ${OBJECTDIR}/main.o main.c    
+	
+${OBJECTDIR}/Graphics/goodtimes72.o: Graphics/goodtimes72.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/Graphics 
+	@${RM} ${OBJECTDIR}/Graphics/goodtimes72.o.d 
+	@${RM} ${OBJECTDIR}/Graphics/goodtimes72.o.ok ${OBJECTDIR}/Graphics/goodtimes72.o.err 
+	@${FIXDEPS} "${OBJECTDIR}/Graphics/goodtimes72.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c ${MP_CC} $(MP_EXTRA_CC_PRE)  -g -omf=elf -x c -c -mcpu=$(MP_PROCESSOR_OPTION) -Werror -Wall -D__DEBUG -mlarge-code -mlarge-data -MMD -MF "${OBJECTDIR}/Graphics/goodtimes72.o.d" -o ${OBJECTDIR}/Graphics/goodtimes72.o Graphics/goodtimes72.c    
+	
 ${OBJECTDIR}/Graphics/ArialBold16.o: Graphics/ArialBold16.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/Graphics 
 	@${RM} ${OBJECTDIR}/Graphics/ArialBold16.o.d 
 	@${RM} ${OBJECTDIR}/Graphics/ArialBold16.o.ok ${OBJECTDIR}/Graphics/ArialBold16.o.err 
 	@${FIXDEPS} "${OBJECTDIR}/Graphics/ArialBold16.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c ${MP_CC} $(MP_EXTRA_CC_PRE)  -g -omf=elf -x c -c -mcpu=$(MP_PROCESSOR_OPTION) -Werror -Wall -D__DEBUG -mlarge-code -mlarge-data -MMD -MF "${OBJECTDIR}/Graphics/ArialBold16.o.d" -o ${OBJECTDIR}/Graphics/ArialBold16.o Graphics/ArialBold16.c    
 	
-${OBJECTDIR}/Graphics/Arial48.o: Graphics/Arial48.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/Graphics/goodtimes36.o: Graphics/goodtimes36.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/Graphics 
-	@${RM} ${OBJECTDIR}/Graphics/Arial48.o.d 
-	@${RM} ${OBJECTDIR}/Graphics/Arial48.o.ok ${OBJECTDIR}/Graphics/Arial48.o.err 
-	@${FIXDEPS} "${OBJECTDIR}/Graphics/Arial48.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c ${MP_CC} $(MP_EXTRA_CC_PRE)  -g -omf=elf -x c -c -mcpu=$(MP_PROCESSOR_OPTION) -Werror -Wall -D__DEBUG -mlarge-code -mlarge-data -MMD -MF "${OBJECTDIR}/Graphics/Arial48.o.d" -o ${OBJECTDIR}/Graphics/Arial48.o Graphics/Arial48.c    
-	
-${OBJECTDIR}/Graphics/Arial36.o: Graphics/Arial36.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/Graphics 
-	@${RM} ${OBJECTDIR}/Graphics/Arial36.o.d 
-	@${RM} ${OBJECTDIR}/Graphics/Arial36.o.ok ${OBJECTDIR}/Graphics/Arial36.o.err 
-	@${FIXDEPS} "${OBJECTDIR}/Graphics/Arial36.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c ${MP_CC} $(MP_EXTRA_CC_PRE)  -g -omf=elf -x c -c -mcpu=$(MP_PROCESSOR_OPTION) -Werror -Wall -D__DEBUG -mlarge-code -mlarge-data -MMD -MF "${OBJECTDIR}/Graphics/Arial36.o.d" -o ${OBJECTDIR}/Graphics/Arial36.o Graphics/Arial36.c    
-	
-${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR} 
-	@${RM} ${OBJECTDIR}/main.o.d 
-	@${RM} ${OBJECTDIR}/main.o.ok ${OBJECTDIR}/main.o.err 
-	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c ${MP_CC} $(MP_EXTRA_CC_PRE)  -g -omf=elf -x c -c -mcpu=$(MP_PROCESSOR_OPTION) -Werror -Wall -D__DEBUG -mlarge-code -mlarge-data -MMD -MF "${OBJECTDIR}/main.o.d" -o ${OBJECTDIR}/main.o main.c    
+	@${RM} ${OBJECTDIR}/Graphics/goodtimes36.o.d 
+	@${RM} ${OBJECTDIR}/Graphics/goodtimes36.o.ok ${OBJECTDIR}/Graphics/goodtimes36.o.err 
+	@${FIXDEPS} "${OBJECTDIR}/Graphics/goodtimes36.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c ${MP_CC} $(MP_EXTRA_CC_PRE)  -g -omf=elf -x c -c -mcpu=$(MP_PROCESSOR_OPTION) -Werror -Wall -D__DEBUG -mlarge-code -mlarge-data -MMD -MF "${OBJECTDIR}/Graphics/goodtimes36.o.d" -o ${OBJECTDIR}/Graphics/goodtimes36.o Graphics/goodtimes36.c    
 	
 endif
 
