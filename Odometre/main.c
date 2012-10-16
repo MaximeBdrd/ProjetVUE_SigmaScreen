@@ -10,6 +10,7 @@
 #include "Graphics/DisplayDriver.h"
 #include "Graphics/goodtimes72.h"
 #include "Graphics/goodtimes36.h"
+#include "ArcData.h"
 
 #include <stdio.h>
 
@@ -23,6 +24,7 @@ _CONFIG3( WPFP_WPFP255 & SOSCSEL_SOSC & WUTSEL_LEG & ALTPMP_ALTPMPEN & WPDIS_WPD
 void UpdatePrgBarRight(WORD newHeight);
 void UpdatePrgBarLeft(WORD newHeight);
 void UpdateTextSpeed(WORD newSpeed);
+void UpdateSpeedArc(int newSpeed);
 
 /*
  * Any error will block the execution of the code, which should help debugging
@@ -38,7 +40,7 @@ int main(int argc, char** argv)
     ClearDevice();
 
     // Infinite Loop
-    SHORT m_speed = 10;
+    SHORT m_speed = 0;
 
 /* Input: xL, yT - location of the upper left center in the x,y coordinate
 *		 xR, yB - location of the lower right left center in the x,y coordinate
@@ -86,21 +88,74 @@ int main(int argc, char** argv)
     OutText("000018km");
 
     DelayMs(3000);
+    WORD dir = 0;
     
     while ( 1 )
     {
         // UI processing
         GOLDraw();
-        m_speed += 3;
-        if ( m_speed > 150)
-            m_speed = 0;
+        if ( dir )
+            m_speed -= 1;
+        else
+            m_speed += 1;
+
+        if ( m_speed > 9 || m_speed == 0)
+        {
+            dir = dir ? 0 : 1;
+        }
+
         DelayMs(200);
         UpdatePrgBarRight(m_speed);
         UpdatePrgBarLeft(m_speed+50);
-        UpdateTextSpeed(m_speed);
+        //UpdateTextSpeed(m_speed);
+        UpdateSpeedArc(m_speed);
     }
 
     return (1); // Return from main = Reboot
+}
+
+void UpdateSpeedArc(int newSpeed)
+{
+    static int oldSpeed = 0;
+
+    if ( newSpeed >= ARC_ANGLE_SPAN )
+        newSpeed = ARC_ANGLE_SPAN - 1;
+
+    if ( oldSpeed == newSpeed )
+        return;
+
+    // Depending of which way we are going, we have to activate or deactivate pixels
+    int angle;
+    if ( oldSpeed < newSpeed )
+    {
+        // Activating pixels
+        SetColor(YELLOW);
+        for( angle = oldSpeed; angle < newSpeed; angle++)
+        {
+            unsigned short ucSize = ArcDataSize[angle];
+            WORD i;
+            for( i = 0; i < ucSize; i++ )
+            {
+                Bar( ArcData[angle][i].PosX, ArcData[angle][i].PosY, ArcData[angle][i].PosX + ArcData[angle][i].Len, ArcData[angle][i].PosY); // Bar(SHORT left, SHORT top, SHORT right, SHORT bottom)
+            }
+        }
+    }
+    else
+    {
+        // Deactivating pixels
+        SetColor(BLACK);
+        for( angle = oldSpeed - 1; angle >= newSpeed; angle--)
+        {
+            unsigned short ucSize = ArcDataSize[angle];
+            WORD i;
+            for( i = 0; i < ucSize; i++ )
+            {
+                Bar( ArcData[angle][i].PosX, ArcData[angle][i].PosY, ArcData[angle][i].PosX + ArcData[angle][i].Len, ArcData[angle][i].PosY); // Bar(SHORT left, SHORT top, SHORT right, SHORT bottom)
+            }
+        }
+    }
+
+    oldSpeed = newSpeed;
 }
 
 void UpdateTextSpeed(WORD newSpeed)
