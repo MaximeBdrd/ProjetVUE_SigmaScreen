@@ -1,8 +1,13 @@
 #include "MainWindow.h"
 
 #include <math.h>
+#include <iostream>
+#include <fstream>
 #include <QFileDialog>
 #include <QGridLayout>
+#include <QList>
+
+using namespace std;
 
 #define PI 3.14159265
 
@@ -65,9 +70,6 @@ void PicWidget::paintEvent(QPaintEvent * event)
     QPen penMid(Qt::yellow, 2, Qt::SolidLine);
     painter.setPen(penMid);
     painter.drawLine(center, QPointF(cx,cy));
-
-
-    painter.drawLine(QPoint(1, 1), QPoint(30, 10));
 }
 
 // ----------------------------------------------
@@ -179,6 +181,8 @@ void MainWindow::browseSrc()
 
 void MainWindow::OnStart()
 {
+    QList<unsigned short> sizelist;
+
     // This function will do the conversion to the (X,Y,HLen) format
     unsigned int nbSteps = txtSteps.text().toInt();
     if ( nbSteps < 2 || nbSteps > 300)
@@ -187,25 +191,111 @@ void MainWindow::OnStart()
     if ( m_pic.startangle >= m_pic.endangle )
         return;
 
+    // Open outfile
+    ofstream outfile;
+    outfile.open("ArcData.c", ios_base::trunc);
+    outfile << "// Arc data programmed in flash memory" << endl;
+    outfile << "#include \"ArcData.h\"" << endl << endl;
+    outfile << "#define ARC_ANGLE_SPAN " << nbSteps << endl << endl;
+    outfile << "LineData ArcData[ARC_ANGLE_SPAN][ARC_MAX_LINES] = { " << endl;
+
     // For each step
     for( unsigned int i = 0; i < nbSteps; i++)
     {
-        double currangle = m_pic.startangle + (m_pic.startangle+m_pic.endangle)/nbSteps;
+        QList<LineData> list;
+        double stepangle = (m_pic.endangle - m_pic.startangle)/nbSteps;
+        double prevangle = m_pic.startangle + (stepangle * (double)i);
+        double currangle = m_pic.startangle + (stepangle * (double)(i+1));
+
+        // Find the parameters of the two line limits
+        QPointF p1( m_pic.center.x() + 480.0*cos(prevangle*PI/180), m_pic.center.y() + 480.0*sin(prevangle*PI/180));
+        QPointF p2( m_pic.center.x() + 480.0*cos(currangle*PI/180), m_pic.center.y() + 480.0*sin(currangle*PI/180));
+        double a1 = (m_pic.center.y() - p1.y())/(m_pic.center.x() - p1.x());
+        double b1 = p1.y() - (a1 * p1.x());
+        double a2 = (m_pic.center.y() - p2.y())/(m_pic.center.x() - p2.x());
+        double b2 = p2.y() - (a2 * p2.x());
+
+        // Check the sign of the included zone
+        QPointF p3( m_pic.center.x() + 480.0*cos(((prevangle+(stepangle/2))*PI/180)), m_pic.center.y() + 480.0*sin(((prevangle+(stepangle/2))*PI/180)));
+        bool l1neg = (p3.x() * a1 + b1 - p3.y()) > 0 ? false : true;
+        bool l2neg = (p3.x() * a2 + b2 - p3.y()) > 0 ? false : true;
+
         // Scan each line
         for ( unsigned int y = 0; y < MAX_HEIGHT; y++)
         {
+            bool fFirstPixelFound = false;
+            unsigned int unHLen = 0;
+            QPoint pointFirst;
+
             // Search for active pixels
             for ( unsigned int x = 0; x < MAX_WIDTH; x++)
             {
-                if( m_pic.img.pixel(x, y))
+                bool fIsInside = ((((double)x * a1 + b1 - (double)y) > 0) != l1neg); // Check for l1 limit
+                fIsInside &= ((((double)x * a2 + b2 - (double)y) > 0) != l2neg); // Check for l2 limit
+                if( m_pic.img.pixel(x, y) == 0xFFFFFFFF && fIsInside) // Black pixel inside our limit
                 {
-                    // Test for limits
-                    currangle = currangle + 1;
-                    // TODO: FINISH THE CONVERTION PART
+                    if (!fFirstPixelFound )
+                    {
+                        fFirstPixelFound = true;
+                        pointFirst = QPoint(x,y);
+                        unHLen = 0;
+                    }
+                    else
+                    {
+                        unHLen++;
+                    }
+                }
+                else
+                {
+                    if ( fFirstPixelFound )
+                    {
+                        fFirstPixelFound = false;
+                        LineData data;
+                        data.PosX = (unsigned short) pointFirst.x();
+                        data.PosY = (unsigned short) pointFirst.y();
+                        data.HLen = (unsigned short) unHLen;
+                        list.append(data);
+                    }
                 }
             }
+
+            // End of the line
+            if ( fFirstPixelFound )
+            {
+                fFirstPixelFound = false;
+                LineData data;
+                data.PosX = (unsigned short) pointFirst.x();
+                data.PosY = (unsigned short) pointFirst.y();
+                data.HLen = (unsigned short) unHLen;
+                list.append(data);
+            }
         }
+
+        // Store this angle data in text file
+        sizelist.append( list.size() );
+        outfile << "    { ";
+        for ( int idx = 0; idx < list.size(); idx++ )
+        {
+            outfile << "{" << list[idx].PosX << ", " << list[idx].PosY << ", " << list[idx].HLen << "}, ";
+        }
+        outfile << " }, // step = " << i << endl;
     }
+
+    // Store the size array
+    outfile << "};" << endl << endl;
+    outfile << "unsigned char ArcDataSize[ARC_ANGLE_SPAN] = { ";
+    unsigned short usMaxSize = 0;
+    for( int idx = 0; idx < sizelist.size(); idx++ )
+    {
+        outfile << sizelist[idx] << ", ";
+        if (sizelist[idx] > usMaxSize) usMaxSize = sizelist[idx];
+    }
+    outfile << "};" << endl << endl;
+
+    outfile << "#define ARC_MAX_LINES " << usMaxSize << endl;
+
+    // Close output file
+    outfile.close();
 }
 
 void MainWindow::OnBtnUpCenter()

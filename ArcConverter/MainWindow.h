@@ -12,6 +12,12 @@
 #define MAX_HEIGHT 272
 #define MAX_WIDTH 480
 
+typedef struct {
+    unsigned short PosX;
+    unsigned short PosY;
+    unsigned short HLen;
+} LineData;
+
 class PicWidget : public QFrame
 {
     Q_OBJECT

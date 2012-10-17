@@ -8,14 +8,14 @@
 #ifndef ARCDATA_H
 #define	ARCDATA_H
 
-#define ARC_ANGLE_SPAN 270
+#define ARC_ANGLE_SPAN 120
 
-#define ARC_MAX_LINES 5
+#define ARC_MAX_LINES 29
 
 typedef struct {
     unsigned short PosX;
-    unsigned char PosY;
-    unsigned char Len;
+    unsigned short PosY;
+    unsigned short Len;
 } LineData;
 
 extern unsigned char ArcDataSize[ARC_ANGLE_SPAN];

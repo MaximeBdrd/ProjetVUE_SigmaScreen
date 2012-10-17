@@ -172,10 +172,10 @@
         <property key="false-conditionals" value="false"/>
         <property key="keep-locals" value="false"/>
         <property key="list-assembly" value="false"/>
-        <property key="list-file" value=""/>
         <property key="list-section-info" value="false"/>
         <property key="list-source" value="false"/>
         <property key="list-symbols" value="false"/>
+        <property key="oXC16asm-list-to-file" value="false"/>
         <property key="omit-debug-dirs" value="false"/>
         <property key="omit-forms" value="false"/>
         <property key="preprocessor-macros" value=""/>
@@ -196,7 +196,7 @@
         <property key="general-code-protect" value="no_code_protect"/>
         <property key="general-write-protect" value="no_write_protect"/>
         <property key="generate-cross-reference-file" value="false"/>
-        <property key="heap-size" value="14000"/>
+        <property key="heap-size" value="1000"/>
         <property key="input-libraries" value=""/>
         <property key="linker-symbols" value=""/>
         <property key="map-file" value="mapfile.txt"/>

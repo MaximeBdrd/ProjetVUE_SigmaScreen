@@ -25,6 +25,7 @@ void UpdatePrgBarRight(WORD newHeight);
 void UpdatePrgBarLeft(WORD newHeight);
 void UpdateTextSpeed(WORD newSpeed);
 void UpdateSpeedArc(int newSpeed);
+void UpdateFlasher( unsigned char ucLeft, unsigned char ucRight);
 
 /*
  * Any error will block the execution of the code, which should help debugging
@@ -36,8 +37,8 @@ int main(int argc, char** argv)
     InitBoard(); //Startup sequence
 
     // Black background
-    SetColor(BLACK);
-    ClearDevice();
+    //SetColor(BLACK);
+    //ClearDevice();
 
     // Infinite Loop
     SHORT m_speed = 0;
@@ -53,7 +54,7 @@ int main(int argc, char** argv)
 *                 bit1 : second octant  bit5 : sixth octant
 *                 bit2 : third octant   bit6 : seventh octant
 *                 bit3 : fourth octant  bit7 : eigth octant */
-    SetColor(RGBConvert(0xFF, 0, 0));
+    /*SetColor(RGBConvert(0xFF, 0, 0));
     Arc(480>>1, 200, 480>>1, 200, 160, 180, 0xE7);
 
     SetColor(RGBConvert(0x00, 0, 0xFF));
@@ -69,7 +70,9 @@ int main(int argc, char** argv)
     SetColor(RGBConvert(0, 0xFF, 0xFF));
     Bar(480-5-50, 5, 480-5, 267);
     //SetColor(RGBConvert(0xFF, 0xFF, 0));
-    //Bar(480-5-50, 80, 480-5, 267);
+    //Bar(480-5-50, 80, 480-5, 267);*/
+
+    PutImageFromSD(0, 0, "vue.bin", 1);
 
     // Display the text for the current speed
     WORD text_width = GetTextWidthFlash("72", (void*)&good_times_rg_72);
@@ -80,14 +83,13 @@ int main(int argc, char** argv)
     OutText("72");
 
     // Display the text for the current distance
-    text_width = GetTextWidthFlash("000018km", (void*)&good_times_rg_36);
+    text_width = GetTextWidthFlash("018", (void*)&good_times_rg_36);
     SetFont((void*)&good_times_rg_36);
     SetColor(WHITE);
     // place the string at the bottom center of the screen
     MoveTo((480>>1)-(text_width>>1), 270-36);
-    OutText("000018km");
+    OutText("018");
 
-    DelayMs(3000);
     WORD dir = 0;
     
     while ( 1 )
@@ -99,19 +101,51 @@ int main(int argc, char** argv)
         else
             m_speed += 1;
 
-        if ( m_speed > 9 || m_speed == 0)
+        if ( m_speed > 119 || m_speed == 0)
         {
             dir = dir ? 0 : 1;
         }
 
-        DelayMs(200);
-        UpdatePrgBarRight(m_speed);
-        UpdatePrgBarLeft(m_speed+50);
+        if ( (m_speed > 60) ) //!= (dir==0) )
+        {
+            UpdateFlasher(1, 0);
+        }
+        else
+            UpdateFlasher(0, 1);
+
+        DelayMs(50);
+        //UpdatePrgBarRight(m_speed);
+        //UpdatePrgBarLeft(m_speed+50);
         //UpdateTextSpeed(m_speed);
         UpdateSpeedArc(m_speed);
     }
 
     return (1); // Return from main = Reboot
+}
+
+void UpdateFlasher( unsigned char ucLeft, unsigned char ucRight)
+{
+    static char oldLeft = 0, oldRight = 0;
+
+    if ( oldLeft != ucLeft )
+    {
+        if ( ucLeft )
+            PutImageFromSD(76, 11, "lefaon.bin", 1);
+        else
+            PutImageFromSD(76, 11, "leftaoff.bin", 1);
+
+        oldLeft = ucLeft;
+    }
+
+    if ( oldRight != ucRight  )
+    {
+        if ( ucRight )
+            PutImageFromSD(354, 13, "rigaon.bin", 1);
+        else
+            PutImageFromSD(354, 13, "rigaoff.bin", 1);
+
+        oldRight = ucRight;
+    }
 }
 
 void UpdateSpeedArc(int newSpeed)
@@ -121,6 +155,9 @@ void UpdateSpeedArc(int newSpeed)
     if ( newSpeed >= ARC_ANGLE_SPAN )
         newSpeed = ARC_ANGLE_SPAN - 1;
 
+    if ( newSpeed < 0 )
+        newSpeed = 0;
+
     if ( oldSpeed == newSpeed )
         return;
 
@@ -129,11 +166,18 @@ void UpdateSpeedArc(int newSpeed)
     if ( oldSpeed < newSpeed )
     {
         // Activating pixels
-        SetColor(YELLOW);
+        //SetColor(RGBConvert(22, 23, 251));
         for( angle = oldSpeed; angle < newSpeed; angle++)
         {
             unsigned short ucSize = ArcDataSize[angle];
             WORD i;
+            if( angle < 54 )
+                SetColor(RGBConvert((40+(angle*3)), 200, 19));
+            else if ( angle < 108 )
+                SetColor(RGBConvert(200, (200-((angle-54)*3)), 19));
+            else
+                SetColor(RGBConvert(200, 40, 19));
+
             for( i = 0; i < ucSize; i++ )
             {
                 Bar( ArcData[angle][i].PosX, ArcData[angle][i].PosY, ArcData[angle][i].PosX + ArcData[angle][i].Len, ArcData[angle][i].PosY); // Bar(SHORT left, SHORT top, SHORT right, SHORT bottom)
