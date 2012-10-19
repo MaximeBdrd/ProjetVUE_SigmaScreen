@@ -159,7 +159,8 @@ BOOL PutImageFromSD(SHORT left, SHORT top, const char *pucFilename, BYTE stretch
 {
     if ( pFileInUse != NULL )
         return 0;
-    
+
+    MoveTo(left, top);
     pFileInUse = FSfopen (pucFilename, "r");
     if ( pFileInUse != NULL )
     {

@@ -79,7 +79,7 @@ int main(int argc, char** argv)
     SetFont((void*)&good_times_rg_72);
     SetColor(WHITE);
     // place the string at the center of the screen
-    MoveTo((480>>1)-(text_width>>1), (272>>1)-(72>>1));
+    MoveTo((480>>1)-(text_width>>1), (272>>1)-(72>>1)+15);
     OutText("72");
 
     // Display the text for the current distance
@@ -87,10 +87,11 @@ int main(int argc, char** argv)
     SetFont((void*)&good_times_rg_36);
     SetColor(WHITE);
     // place the string at the bottom center of the screen
-    MoveTo((480>>1)-(text_width>>1), 270-36);
+    MoveTo((480>>1)-(text_width>>1)-18, 270-36); // Offset de 18
     OutText("018");
 
     WORD dir = 0;
+    WORD flagArrows = 0;
     
     while ( 1 )
     {
@@ -106,14 +107,20 @@ int main(int argc, char** argv)
             dir = dir ? 0 : 1;
         }
 
-        if ( (m_speed > 60) ) //!= (dir==0) )
+        if ( (m_speed > 60) && flagArrows == 0 ) //!= (dir==0) )
         {
-            UpdateFlasher(1, 0);
+            flagArrows = 1;
+            PutImageFromSD(76, 11, "leftaon.bin", 1);
+            PutImageFromSD(354, 13, "rigaoff.bin", 1);
         }
-        else
-            UpdateFlasher(0, 1);
+        else if ((m_speed < 60) && flagArrows == 1)
+        {
+            flagArrows = 0;
+            PutImageFromSD(76, 11, "leftaoff.bin", 1);
+            PutImageFromSD(354, 13, "rigaon.bin", 1);
+        }
 
-        DelayMs(50);
+        DelayMs(30);
         //UpdatePrgBarRight(m_speed);
         //UpdatePrgBarLeft(m_speed+50);
         //UpdateTextSpeed(m_speed);
@@ -125,24 +132,33 @@ int main(int argc, char** argv)
 
 void UpdateFlasher( unsigned char ucLeft, unsigned char ucRight)
 {
-    static char oldLeft = 0, oldRight = 0;
+    static unsigned char oldLeft = 0;
+    static unsigned char oldRight = 0;
 
     if ( oldLeft != ucLeft )
     {
-        if ( ucLeft )
+        if ( ucLeft > 0 )
+        {
             PutImageFromSD(76, 11, "lefaon.bin", 1);
+        }
         else
+        {
             PutImageFromSD(76, 11, "leftaoff.bin", 1);
+        }
 
         oldLeft = ucLeft;
     }
 
     if ( oldRight != ucRight  )
     {
-        if ( ucRight )
+        if ( ucRight > 0 )
+        {
             PutImageFromSD(354, 13, "rigaon.bin", 1);
+        }
         else
+        {
             PutImageFromSD(354, 13, "rigaoff.bin", 1);
+        }
 
         oldRight = ucRight;
     }
